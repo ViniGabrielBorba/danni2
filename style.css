@@ -6,14 +6,20 @@
 }
 
 :root {
-    /* Cores Nude */
+    /* Cores Nude com Tom Rosado */
     --nude-claro: #f5e6d3;
     --nude-medio: #e8d5c4;
     --nude-escuro: #d4b896;
     --nude-dourado: #c9a882;
+    --nude-rosado: #e8c5b8;
+    --rosa-suave: #f4d7d0;
+    --rosa-claro: #fae8e3;
+    --rosa-medio: #e8b8b0;
     --bege: #faf8f5;
+    --bege-rosado: #faf5f3;
     --bege-escuro: #ebe7e0;
     --marrom-claro: #b8a082;
+    --marrom-rosado: #a8928a;
     --marrom-medio: #8b7355;
     --marrom-escuro: #5c4a3a;
     --branco: #ffffff;
@@ -23,6 +29,7 @@
     --cinza-escuro: #666666;
     --preto-suave: #2c2c2c;
     --sombra-nude: rgba(212, 184, 150, 0.2);
+    --sombra-rosada: rgba(232, 197, 184, 0.25);
     --sombra-suave: rgba(0, 0, 0, 0.08);
 }
 
@@ -81,8 +88,8 @@ body {
     height: 50px;
     border-radius: 50%;
     object-fit: cover;
-    border: 2px solid var(--nude-medio);
-    box-shadow: 0 2px 10px var(--sombra-suave);
+    border: 2px solid var(--nude-rosado);
+    box-shadow: 0 2px 10px var(--sombra-rosada);
     transition: transform 0.3s ease;
 }
 
@@ -121,7 +128,7 @@ body {
     left: 0;
     width: 0;
     height: 2px;
-    background: linear-gradient(90deg, var(--nude-dourado), var(--marrom-claro));
+    background: linear-gradient(90deg, var(--nude-rosado), var(--rosa-medio));
     transition: width 0.3s ease;
 }
 
@@ -178,7 +185,7 @@ body {
     align-items: center;
     justify-content: center;
     position: relative;
-    background: linear-gradient(135deg, var(--bege) 0%, var(--branco-creme) 50%, var(--nude-claro) 100%);
+    background: linear-gradient(135deg, var(--bege-rosado) 0%, var(--rosa-claro) 50%, var(--nude-claro) 100%);
     padding: 120px 20px 80px;
     overflow: hidden;
 }
@@ -190,7 +197,7 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background: radial-gradient(circle at 30% 50%, var(--sombra-nude) 0%, transparent 60%);
+    background: radial-gradient(circle at 30% 50%, var(--sombra-rosada) 0%, transparent 60%);
     opacity: 0.4;
 }
 
@@ -232,13 +239,13 @@ body {
 .cta-button {
     display: inline-block;
     padding: 15px 40px;
-    background: linear-gradient(135deg, var(--nude-dourado), var(--marrom-claro));
+    background: linear-gradient(135deg, var(--nude-rosado), var(--rosa-medio), var(--nude-dourado));
     color: var(--branco);
     text-decoration: none;
     font-weight: 500;
     font-size: 1rem;
     border-radius: 30px;
-    box-shadow: 0 4px 15px var(--sombra-nude);
+    box-shadow: 0 4px 15px var(--sombra-rosada);
     transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
@@ -265,7 +272,7 @@ body {
 
 .cta-button:hover {
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px var(--sombra-nude);
+    box-shadow: 0 6px 20px var(--sombra-rosada), 0 0 15px rgba(232, 197, 184, 0.3);
 }
 
 /* Produtos Section */
@@ -307,8 +314,8 @@ body {
 
 .produto-card:hover {
     transform: translateY(-8px);
-    box-shadow: 0 8px 25px var(--sombra-nude);
-    border-color: var(--nude-medio);
+    box-shadow: 0 8px 25px var(--sombra-rosada);
+    border-color: var(--nude-rosado);
 }
 
 .produto-image {
@@ -316,7 +323,7 @@ body {
     height: 280px;
     overflow: hidden;
     position: relative;
-    background: var(--bege);
+    background: var(--bege-rosado);
 }
 
 .produto-image img {
@@ -351,7 +358,7 @@ body {
 .btn-comprar {
     width: 100%;
     padding: 12px;
-    background: linear-gradient(135deg, var(--nude-dourado), var(--marrom-claro));
+    background: linear-gradient(135deg, var(--nude-rosado), var(--rosa-medio));
     color: var(--branco);
     border: none;
     border-radius: 25px;
@@ -359,12 +366,13 @@ body {
     font-size: 0.95rem;
     cursor: pointer;
     transition: all 0.3s ease;
-    box-shadow: 0 2px 10px var(--sombra-nude);
+    box-shadow: 0 2px 10px var(--sombra-rosada);
 }
 
 .btn-comprar:hover {
     transform: translateY(-2px);
-    box-shadow: 0 4px 15px var(--sombra-nude);
+    box-shadow: 0 4px 15px var(--sombra-rosada);
+    background: linear-gradient(135deg, var(--rosa-medio), var(--nude-rosado));
 }
 
 .btn-link {
@@ -376,7 +384,7 @@ body {
 /* Sobre Section */
 .sobre {
     padding: 100px 20px;
-    background: linear-gradient(180deg, var(--bege) 0%, var(--branco) 100%);
+    background: linear-gradient(180deg, var(--bege-rosado) 0%, var(--branco) 100%);
 }
 
 .sobre-content {
@@ -458,7 +466,7 @@ body {
 .footer-section h3 {
     font-size: 1.3rem;
     margin-bottom: 20px;
-    color: var(--nude-claro);
+    color: var(--rosa-claro);
     font-weight: 600;
 }
 
@@ -488,13 +496,13 @@ body {
 
 .social-link i {
     font-size: 1.3rem;
-    color: var(--nude-claro);
+    color: var(--rosa-claro);
     transition: all 0.3s ease;
 }
 
 .social-link:hover {
-    color: var(--nude-claro);
-    background: rgba(245, 230, 211, 0.1);
+    color: var(--rosa-claro);
+    background: rgba(250, 231, 227, 0.15);
     transform: translateX(5px);
 }
 
@@ -514,7 +522,7 @@ body {
 /* Página de Produtos */
 .produtos-page {
     padding: 120px 20px 100px;
-    background: var(--bege);
+    background: linear-gradient(180deg, var(--bege-rosado) 0%, var(--branco) 100%);
     min-height: 100vh;
 }
 
@@ -593,7 +601,7 @@ body {
 /* Página Contato */
 .contato-page {
     padding: 120px 20px 100px;
-    background: linear-gradient(135deg, var(--bege) 0%, var(--branco) 100%);
+    background: linear-gradient(135deg, var(--bege-rosado) 0%, var(--rosa-claro) 50%, var(--branco) 100%);
     min-height: 100vh;
 }
 
@@ -630,12 +638,12 @@ body {
 
 .contato-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 25px var(--sombra-nude);
+    box-shadow: 0 8px 25px var(--sombra-rosada);
 }
 
 .contato-card i {
     font-size: 2.5rem;
-    color: var(--nude-dourado);
+    color: var(--nude-rosado);
     margin-bottom: 20px;
 }
 
@@ -719,19 +727,19 @@ body {
 
 .cta-button-secondary {
     background: transparent;
-    border: 2px solid var(--nude-dourado);
-    color: var(--marrom-medio);
+    border: 2px solid var(--nude-rosado);
+    color: var(--marrom-rosado);
 }
 
 .cta-button-secondary:hover {
-    background: var(--nude-dourado);
+    background: var(--nude-rosado);
     color: var(--branco);
 }
 
 /* Sobre Resumo */
 .sobre-resumo {
     padding: 100px 20px;
-    background: var(--branco);
+    background: linear-gradient(180deg, var(--branco) 0%, var(--rosa-claro) 100%);
 }
 
 .sobre-resumo-content {
@@ -811,8 +819,8 @@ body {
 .feature-tag {
     display: inline-block;
     padding: 5px 12px;
-    background: var(--nude-claro);
-    color: var(--marrom-medio);
+    background: var(--rosa-suave);
+    color: var(--marrom-rosado);
     border-radius: 15px;
     font-size: 0.85rem;
     font-weight: 500;
@@ -840,7 +848,7 @@ body {
 }
 
 .produto-detail-item i {
-    color: var(--nude-dourado);
+    color: var(--nude-rosado);
     font-size: 1rem;
 }
 
@@ -857,7 +865,7 @@ body {
 /* Benefícios */
 .beneficios {
     padding: 100px 20px;
-    background: linear-gradient(180deg, var(--bege) 0%, var(--branco) 100%);
+    background: linear-gradient(180deg, var(--bege-rosado) 0%, var(--branco) 100%);
 }
 
 .beneficios-grid {
@@ -879,20 +887,20 @@ body {
 
 .beneficio-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 25px var(--sombra-nude);
+    box-shadow: 0 8px 25px var(--sombra-rosada);
 }
 
 .beneficio-icon {
     width: 70px;
     height: 70px;
     margin: 0 auto 20px;
-    background: linear-gradient(135deg, var(--nude-claro), var(--nude-medio));
+    background: linear-gradient(135deg, var(--rosa-suave), var(--nude-rosado));
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 2rem;
-    color: var(--marrom-medio);
+    color: var(--marrom-rosado);
 }
 
 .beneficio-card h3 {
@@ -912,7 +920,7 @@ body {
 /* CTA Final */
 .cta-final {
     padding: 100px 20px;
-    background: linear-gradient(135deg, var(--marrom-medio) 0%, var(--marrom-escuro) 100%);
+    background: linear-gradient(135deg, var(--marrom-rosado) 0%, var(--marrom-medio) 50%, var(--marrom-escuro) 100%);
     color: var(--branco);
     text-align: center;
 }
@@ -927,7 +935,7 @@ body {
 .cta-final-content p {
     font-size: 1.2rem;
     margin-bottom: 40px;
-    color: var(--nude-claro);
+    color: var(--rosa-claro);
     font-weight: 300;
 }
 
@@ -944,7 +952,7 @@ body {
 }
 
 .cta-final .cta-button:hover {
-    background: var(--nude-claro);
+    background: var(--rosa-claro);
     color: var(--marrom-escuro);
 }
 
@@ -976,7 +984,7 @@ body {
 }
 
 .footer-links a:hover {
-    color: var(--nude-claro);
+    color: var(--rosa-claro);
 }
 
 /* Sobre Page Sections */
@@ -1008,7 +1016,7 @@ body {
 }
 
 .valor-card {
-    background: var(--bege);
+    background: var(--bege-rosado);
     padding: 30px;
     border-radius: 15px;
     text-align: center;
@@ -1025,13 +1033,13 @@ body {
     width: 60px;
     height: 60px;
     margin: 0 auto 15px;
-    background: linear-gradient(135deg, var(--nude-claro), var(--nude-medio));
+    background: linear-gradient(135deg, var(--rosa-suave), var(--nude-rosado));
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 1.5rem;
-    color: var(--marrom-medio);
+    color: var(--marrom-rosado);
 }
 
 .valor-card h3 {
@@ -1058,13 +1066,13 @@ body {
     gap: 20px;
     margin-bottom: 30px;
     padding: 20px;
-    background: var(--bege);
+    background: var(--bege-rosado);
     border-radius: 10px;
-    border-left: 4px solid var(--nude-dourado);
+    border-left: 4px solid var(--nude-rosado);
 }
 
 .diferencial-item i {
-    color: var(--nude-dourado);
+    color: var(--nude-rosado);
     font-size: 1.5rem;
     margin-top: 5px;
     flex-shrink: 0;
@@ -1145,8 +1153,8 @@ body {
 .form-group select:focus,
 .form-group textarea:focus {
     outline: none;
-    border-color: var(--nude-dourado);
-    box-shadow: 0 0 0 3px rgba(201, 168, 130, 0.1);
+    border-color: var(--nude-rosado);
+    box-shadow: 0 0 0 3px rgba(232, 197, 184, 0.15);
 }
 
 .form-group textarea {
@@ -1156,7 +1164,7 @@ body {
 
 .btn-submit {
     padding: 15px 40px;
-    background: linear-gradient(135deg, var(--nude-dourado), var(--marrom-claro));
+    background: linear-gradient(135deg, var(--nude-rosado), var(--rosa-medio));
     color: var(--branco);
     border: none;
     border-radius: 30px;
@@ -1164,13 +1172,14 @@ body {
     font-size: 1rem;
     cursor: pointer;
     transition: all 0.3s ease;
-    box-shadow: 0 4px 15px var(--sombra-nude);
+    box-shadow: 0 4px 15px var(--sombra-rosada);
     margin-top: 10px;
 }
 
 .btn-submit:hover {
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px var(--sombra-nude);
+    box-shadow: 0 6px 20px var(--sombra-rosada);
+    background: linear-gradient(135deg, var(--rosa-medio), var(--nude-rosado));
 }
 
 /* Info Section */
@@ -1200,7 +1209,7 @@ body {
 }
 
 .info-card h3 i {
-    color: var(--nude-dourado);
+    color: var(--nude-rosado);
 }
 
 .info-card ul {
@@ -1220,7 +1229,7 @@ body {
     content: '✓';
     position: absolute;
     left: 0;
-    color: var(--nude-dourado);
+    color: var(--nude-rosado);
     font-weight: bold;
 }
 
