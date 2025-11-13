@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Entre em contato com a $Wowlashes. WhatsApp, Instagram, E-mail e formulário de contato.">
     <title>$Wowlashes - Contato</title>
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -39,39 +40,127 @@
         <div class="container">
             <div class="contato-header">
                 <h1>Entre em Contato</h1>
-                <p>Estamos aqui para ajudar você! Entre em contato conosco através dos nossos canais de atendimento.</p>
+                <p>Estamos aqui para ajudar você! Entre em contato conosco através dos nossos canais de atendimento. Nossa equipe está pronta para responder suas dúvidas e ajudar você a encontrar os produtos perfeitos.</p>
             </div>
 
             <div class="contato-content">
                 <div class="contato-card">
                     <i class="fab fa-whatsapp"></i>
                     <h3>WhatsApp</h3>
-                    <p>Fale conosco diretamente pelo WhatsApp. Estamos disponíveis para tirar suas dúvidas e ajudar com seus pedidos.</p>
-                    <p><a href="#" onclick="alert('Adicione seu número do WhatsApp aqui'); return false;">Clique para conversar</a></p>
+                    <p>Fale conosco diretamente pelo WhatsApp. Estamos disponíveis para tirar suas dúvidas, ajudar com seus pedidos e fornecer informações sobre nossos produtos.</p>
+                    <p><strong>Horário:</strong> Segunda a Sexta, das 9h às 18h</p>
+                    <p><a href="#" onclick="alert('Adicione seu número do WhatsApp aqui'); return false;" class="contato-link">Clique para conversar</a></p>
                 </div>
 
                 <div class="contato-card">
                     <i class="fab fa-instagram"></i>
                     <h3>Instagram</h3>
-                    <p>Siga-nos no Instagram e acompanhe nossas novidades, dicas de beleza e promoções exclusivas.</p>
-                    <p><a href="#" onclick="alert('Adicione seu perfil do Instagram aqui'); return false;">@wowlashes</a></p>
+                    <p>Siga-nos no Instagram e acompanhe nossas novidades, dicas de beleza, promoções exclusivas e muito mais. Fique por dentro de todas as novidades da $Wowlashes.</p>
+                    <p><strong>@wowlashes</strong></p>
+                    <p><a href="#" onclick="alert('Adicione seu perfil do Instagram aqui'); return false;" class="contato-link">Seguir no Instagram</a></p>
                 </div>
 
                 <div class="contato-card">
                     <i class="fas fa-envelope"></i>
                     <h3>E-mail</h3>
-                    <p>Envie-nos um e-mail com suas dúvidas, sugestões ou pedidos. Responderemos o mais breve possível.</p>
-                    <p><a href="mailto:contato@wowlashes.com">contato@wowlashes.com</a></p>
+                    <p>Envie-nos um e-mail com suas dúvidas, sugestões ou pedidos. Responderemos o mais breve possível, normalmente dentro de 24 horas.</p>
+                    <p><strong>contato@wowlashes.com</strong></p>
+                    <p><a href="mailto:contato@wowlashes.com" class="contato-link">Enviar e-mail</a></p>
                 </div>
             </div>
 
+            <!-- Formulário de Contato -->
+            <div class="contato-form-wrapper">
+                <h2>Envie sua Mensagem</h2>
+                <p class="form-subtitle">Preencha o formulário abaixo e entraremos em contato o mais breve possível.</p>
+                <form class="contato-form" id="contatoForm">
+                    <div class="form-group">
+                        <label for="nome">Nome Completo *</label>
+                        <input type="text" id="nome" name="nome" required placeholder="Seu nome completo">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">E-mail *</label>
+                        <input type="email" id="email" name="email" required placeholder="seu@email.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="telefone">Telefone/WhatsApp</label>
+                        <input type="tel" id="telefone" name="telefone" placeholder="(00) 00000-0000">
+                    </div>
+                    <div class="form-group">
+                        <label for="assunto">Assunto *</label>
+                        <select id="assunto" name="assunto" required>
+                            <option value="">Selecione um assunto</option>
+                            <option value="produto">Dúvida sobre produto</option>
+                            <option value="pedido">Informações sobre pedido</option>
+                            <option value="suporte">Suporte técnico</option>
+                            <option value="parceria">Parcerias</option>
+                            <option value="outro">Outro</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="mensagem">Mensagem *</label>
+                        <textarea id="mensagem" name="mensagem" rows="5" required placeholder="Escreva sua mensagem aqui..."></textarea>
+                    </div>
+                    <button type="submit" class="btn-submit">Enviar Mensagem</button>
+                </form>
+            </div>
+
+            <!-- Informações de Entrega -->
+            <div class="info-section">
+                <div class="info-card">
+                    <h3><i class="fas fa-shipping-fast"></i> Informações de Entrega</h3>
+                    <ul>
+                        <li>Enviamos para todo o Brasil</li>
+                        <li>Frete calculado de acordo com a localidade</li>
+                        <li>Entrega rápida e segura</li>
+                        <li>Acompanhamento do pedido por e-mail</li>
+                        <li>Produtos embalados com cuidado</li>
+                    </ul>
+                </div>
+                <div class="info-card">
+                    <h3><i class="fas fa-shield-alt"></i> Garantia e Troca</h3>
+                    <ul>
+                        <li>Garantia de qualidade em todos os produtos</li>
+                        <li>Troca ou reembolso em caso de defeito</li>
+                        <li>Política de devolução em até 7 dias</li>
+                        <li>Atendimento para resolução de problemas</li>
+                        <li>Compromisso com sua satisfação</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Horário de Atendimento -->
             <div class="horario-card">
                 <h2>Horário de Atendimento</h2>
                 <p>
-                    Segunda a Sexta: 9h às 18h<br>
-                    Sábado: 9h às 13h<br>
-                    Domingo: Fechado
+                    <strong>Segunda a Sexta:</strong> 9h às 18h<br>
+                    <strong>Sábado:</strong> 9h às 13h<br>
+                    <strong>Domingo:</strong> Fechado
                 </p>
+                <p class="horario-note">Nosso atendimento está disponível nos horários acima. Mensagens recebidas fora do horário serão respondidas no próximo dia útil.</p>
+            </div>
+
+            <!-- FAQ -->
+            <div class="faq-section">
+                <h2>Perguntas Frequentes</h2>
+                <div class="faq-list">
+                    <div class="faq-item">
+                        <h3>Como faço um pedido?</h3>
+                        <p>Entre em contato conosco através do WhatsApp, Instagram ou e-mail. Nossa equipe irá ajudá-la a escolher os produtos ideais e processar seu pedido.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>Quais formas de pagamento vocês aceitam?</h3>
+                        <p>Aceitamos PIX, cartão de crédito, débito e boleto bancário. Informações detalhadas serão fornecidas durante o processo de pedido.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>Quanto tempo demora a entrega?</h3>
+                        <p>O prazo de entrega varia de acordo com a localidade. Após a confirmação do pedido, você receberá as informações de rastreamento por e-mail.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>Os produtos têm garantia?</h3>
+                        <p>Sim, todos os nossos produtos possuem garantia de qualidade. Em caso de defeito, entre em contato conosco para resolução.</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -111,4 +200,3 @@
     <script src="script.js"></script>
 </body>
 </html>
-

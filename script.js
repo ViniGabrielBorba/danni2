@@ -189,3 +189,44 @@ if (pageContent) {
         }, 200);
     });
 }
+
+// Formulário de Contato
+const contatoForm = document.getElementById('contatoForm');
+if (contatoForm) {
+    contatoForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        // Coletar dados do formulário
+        const formData = new FormData(contatoForm);
+        const dados = {
+            nome: formData.get('nome'),
+            email: formData.get('email'),
+            telefone: formData.get('telefone'),
+            assunto: formData.get('assunto'),
+            mensagem: formData.get('mensagem')
+        };
+        
+        // Aqui você pode enviar os dados para um servidor
+        // Por enquanto, apenas mostra uma mensagem de sucesso
+        alert('Mensagem enviada com sucesso! Entraremos em contato em breve.\n\nObrigada por entrar em contato com a $Wowlashes!');
+        
+        // Limpar formulário
+        contatoForm.reset();
+    });
+}
+
+// Adicionar máscara para telefone
+const telefoneInput = document.getElementById('telefone');
+if (telefoneInput) {
+    telefoneInput.addEventListener('input', function(e) {
+        let value = e.target.value.replace(/\D/g, '');
+        if (value.length <= 11) {
+            if (value.length <= 10) {
+                value = value.replace(/(\d{2})(\d{4})(\d{0,4})/, '($1) $2-$3');
+            } else {
+                value = value.replace(/(\d{2})(\d{5})(\d{0,4})/, '($1) $2-$3');
+            }
+            e.target.value = value;
+        }
+    });
+}
