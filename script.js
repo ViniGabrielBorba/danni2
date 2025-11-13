@@ -2,17 +2,23 @@
 const menuToggle = document.getElementById('menuToggle');
 const nav = document.getElementById('nav');
 
-menuToggle.addEventListener('click', () => {
-    nav.classList.toggle('active');
-    menuToggle.classList.toggle('active');
-});
+if (menuToggle && nav) {
+    menuToggle.addEventListener('click', () => {
+        nav.classList.toggle('active');
+        menuToggle.classList.toggle('active');
+    });
+}
 
 // Fechar menu ao clicar em um link
 const navLinks = document.querySelectorAll('.nav-link');
 navLinks.forEach(link => {
     link.addEventListener('click', () => {
-        nav.classList.remove('active');
-        menuToggle.classList.remove('active');
+        if (nav) {
+            nav.classList.remove('active');
+        }
+        if (menuToggle) {
+            menuToggle.classList.remove('active');
+        }
     });
 });
 
@@ -20,17 +26,48 @@ navLinks.forEach(link => {
 const header = document.getElementById('header');
 let lastScroll = 0;
 
-window.addEventListener('scroll', () => {
-    const currentScroll = window.pageYOffset;
+if (header) {
+    window.addEventListener('scroll', () => {
+        const currentScroll = window.pageYOffset;
+        
+        if (currentScroll > 100) {
+            header.classList.add('scrolled');
+        } else {
+            header.classList.remove('scrolled');
+        }
+        
+        lastScroll = currentScroll;
+    });
+}
+
+// Destacar link ativo no menu
+function setActiveLink() {
+    if (navLinks.length === 0) return;
     
-    if (currentScroll > 100) {
-        header.classList.add('scrolled');
-    } else {
-        header.classList.remove('scrolled');
+    let currentPage = window.location.pathname.split('/').pop();
+    
+    // Se estiver na raiz ou index.html
+    if (!currentPage || currentPage === '' || currentPage === 'index.html') {
+        currentPage = 'index.html';
     }
     
-    lastScroll = currentScroll;
-});
+    navLinks.forEach(link => {
+        const linkHref = link.getAttribute('href');
+        link.classList.remove('active');
+        
+        // Comparar o nome do arquivo
+        if (linkHref === currentPage) {
+            link.classList.add('active');
+        }
+    });
+}
+
+// Executar ao carregar a página
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', setActiveLink);
+} else {
+    setActiveLink();
+}
 
 // Animação de scroll para elementos
 const observerOptions = {
@@ -69,8 +106,8 @@ produtoCards.forEach(card => {
 window.addEventListener('scroll', () => {
     const scrolled = window.pageYOffset;
     const hero = document.querySelector('.hero');
-    if (hero) {
-        hero.style.transform = `translateY(${scrolled * 0.3}px)`;
+    if (hero && window.location.pathname.includes('index.html')) {
+        hero.style.transform = `translateY(${scrolled * 0.2}px)`;
     }
 });
 
@@ -104,7 +141,7 @@ rippleStyle.textContent = `
     .ripple {
         position: absolute;
         border-radius: 50%;
-        background: rgba(255, 255, 255, 0.5);
+        background: rgba(255, 255, 255, 0.3);
         transform: scale(0);
         animation: ripple-animation 0.6s ease-out;
         pointer-events: none;
@@ -119,48 +156,6 @@ rippleStyle.textContent = `
 `;
 document.head.appendChild(rippleStyle);
 
-// Smooth scroll para links de navegação
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-            const headerHeight = header.offsetHeight;
-            const targetPosition = target.offsetTop - headerHeight;
-            window.scrollTo({
-                top: targetPosition,
-                behavior: 'smooth'
-            });
-        }
-    });
-});
-
-// Adicionar efeito de brilho nos cards ao passar o mouse
-produtoCards.forEach(card => {
-    card.addEventListener('mousemove', function(e) {
-        const rect = card.getBoundingClientRect();
-        const x = e.clientX - rect.left;
-        const y = e.clientY - rect.top;
-        
-        card.style.setProperty('--mouse-x', x + 'px');
-        card.style.setProperty('--mouse-y', y + 'px');
-    });
-});
-
-// Animação de contagem (opcional para estatísticas futuras)
-function animateValue(element, start, end, duration) {
-    let startTimestamp = null;
-    const step = (timestamp) => {
-        if (!startTimestamp) startTimestamp = timestamp;
-        const progress = Math.min((timestamp - startTimestamp) / duration, 1);
-        element.textContent = Math.floor(progress * (end - start) + start);
-        if (progress < 1) {
-            window.requestAnimationFrame(step);
-        }
-    };
-    window.requestAnimationFrame(step);
-}
-
 // Adicionar efeito de loading suave
 window.addEventListener('load', () => {
     document.body.style.opacity = '0';
@@ -170,12 +165,27 @@ window.addEventListener('load', () => {
     }, 100);
 });
 
-// Prevenir comportamento padrão em links vazios
-document.querySelectorAll('a[href="#"]').forEach(link => {
-    link.addEventListener('click', (e) => {
-        e.preventDefault();
-        // Aqui você pode adicionar ação quando clicar em links de contato
-        console.log('Link clicado:', link.textContent);
-    });
+// Fechar menu ao clicar fora dele (mobile)
+document.addEventListener('click', (e) => {
+    if (nav && menuToggle && nav.classList.contains('active')) {
+        if (!nav.contains(e.target) && !menuToggle.contains(e.target)) {
+            nav.classList.remove('active');
+            menuToggle.classList.remove('active');
+        }
+    }
 });
 
+// Adicionar animação fade-in para conteúdo da página
+const pageContent = document.querySelector('.produtos-page, .sobre-page, .contato-page');
+if (pageContent) {
+    pageContent.style.opacity = '0';
+    pageContent.style.transform = 'translateY(20px)';
+    pageContent.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+    
+    window.addEventListener('load', () => {
+        setTimeout(() => {
+            pageContent.style.opacity = '1';
+            pageContent.style.transform = 'translateY(0)';
+        }, 200);
+    });
+}

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>$Wowlashes - Início</title>
+    <title>$Wowlashes - Produtos</title>
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -20,8 +20,8 @@
             </a>
             <nav class="nav" id="nav">
                 <ul class="nav-list">
-                    <li><a href="index.html" class="nav-link active">Início</a></li>
-                    <li><a href="produtos.html" class="nav-link">Produtos</a></li>
+                    <li><a href="index.html" class="nav-link">Início</a></li>
+                    <li><a href="produtos.html" class="nav-link active">Produtos</a></li>
                     <li><a href="sobre.html" class="nav-link">Sobre</a></li>
                     <li><a href="contato.html" class="nav-link">Contato</a></li>
                 </ul>
@@ -34,19 +34,14 @@
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-content">
-            <h1 class="hero-title">Realce sua Beleza com Estilo</h1>
-            <p class="hero-subtitle">Produtos premium de beleza — cílios, espumas de limpeza, mini ventiladores e muito mais.</p>
-            <a href="produtos.html" class="cta-button">Ver produtos</a>
-        </div>
-    </section>
-
-    <!-- Destaque de Produtos -->
-    <section class="produtos">
+    <!-- Produtos Page -->
+    <section class="produtos-page">
         <div class="container">
-            <h2 class="section-title">Produtos em Destaque</h2>
+            <div class="produtos-header">
+                <h1>Nossos Produtos</h1>
+                <p>Descubra nossa linha completa de produtos premium de beleza, cuidadosamente selecionados para realçar sua beleza natural.</p>
+            </div>
+
             <div class="produtos-grid">
                 <div class="produto-card">
                     <div class="produto-image">
@@ -54,8 +49,8 @@
                     </div>
                     <div class="produto-info">
                         <h3 class="produto-name">Cílios Postiços</h3>
-                        <p class="produto-description">Cílios de alta qualidade para um look deslumbrante e natural.</p>
-                        <a href="produtos.html" class="btn-comprar btn-link">Ver mais</a>
+                        <p class="produto-description">Cílios de alta qualidade para um look deslumbrante e natural. Perfeitos para qualquer ocasião, proporcionando volume e elegância.</p>
+                        <button class="btn-comprar">Comprar</button>
                     </div>
                 </div>
 
@@ -65,8 +60,8 @@
                     </div>
                     <div class="produto-info">
                         <h3 class="produto-name">Espuma de Limpeza Facial</h3>
-                        <p class="produto-description">Limpeza profunda e suave para sua pele, deixando-a renovada.</p>
-                        <a href="produtos.html" class="btn-comprar btn-link">Ver mais</a>
+                        <p class="produto-description">Limpeza profunda e suave para sua pele, deixando-a renovada e hidratada. Ideal para todos os tipos de pele.</p>
+                        <button class="btn-comprar">Comprar</button>
                     </div>
                 </div>
 
@@ -76,8 +71,8 @@
                     </div>
                     <div class="produto-info">
                         <h3 class="produto-name">Mini Ventilador</h3>
-                        <p class="produto-description">Compacto e potente, perfeito para secar e finalizar seus cílios.</p>
-                        <a href="produtos.html" class="btn-comprar btn-link">Ver mais</a>
+                        <p class="produto-description">Compacto e potente, perfeito para secar e finalizar seus cílios. Design elegante e funcional.</p>
+                        <button class="btn-comprar">Comprar</button>
                     </div>
                 </div>
 
@@ -87,13 +82,43 @@
                     </div>
                     <div class="produto-info">
                         <h3 class="produto-name">Aplicador de Cílios</h3>
-                        <p class="produto-description">Ferramenta profissional para aplicação precisa e fácil dos cílios.</p>
-                        <a href="produtos.html" class="btn-comprar btn-link">Ver mais</a>
+                        <p class="produto-description">Ferramenta profissional para aplicação precisa e fácil dos cílios. Facilita o processo e garante resultados perfeitos.</p>
+                        <button class="btn-comprar">Comprar</button>
                     </div>
                 </div>
-            </div>
-            <div class="produtos-cta">
-                <a href="produtos.html" class="cta-button">Ver todos os produtos</a>
+
+                <div class="produto-card">
+                    <div class="produto-image">
+                        <img src="Fio Marrom - 0.07 - D - Nagaraku.jpg" alt="Fio Marrom">
+                    </div>
+                    <div class="produto-info">
+                        <h3 class="produto-name">Fio Marrom</h3>
+                        <p class="produto-description">Fio de alta qualidade em tom marrom natural. Perfeito para extensões de cílios profissionais.</p>
+                        <button class="btn-comprar">Comprar</button>
+                    </div>
+                </div>
+
+                <div class="produto-card">
+                    <div class="produto-image">
+                        <img src="Adesivo Uniglue.jpg" alt="Adesivo Uniglue">
+                    </div>
+                    <div class="produto-info">
+                        <h3 class="produto-name">Adesivo Uniglue</h3>
+                        <p class="produto-description">Adesivo de longa duração para aplicação de cílios. Seguro, resistente e fácil de usar.</p>
+                        <button class="btn-comprar">Comprar</button>
+                    </div>
+                </div>
+
+                <div class="produto-card">
+                    <div class="produto-image">
+                        <img src="Fita siliconada.jpg" alt="Fita Siliconada">
+                    </div>
+                    <div class="produto-info">
+                        <h3 class="produto-name">Fita Siliconada</h3>
+                        <p class="produto-description">Fita siliconada de alta qualidade para aplicação profissional. Proporciona fixação perfeita e confortável.</p>
+                        <button class="btn-comprar">Comprar</button>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -133,5 +158,4 @@
     <script src="script.js"></script>
 </body>
 </html>
-
 

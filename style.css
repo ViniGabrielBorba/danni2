@@ -6,17 +6,24 @@
 }
 
 :root {
-    --rosa-vibrante: #ff1493;
-    --rosa-neon: #ff00ff;
-    --roxo: #9370db;
-    --roxo-escuro: #6a5acd;
-    --preto: #000000;
-    --preto-suave: #1a1a1a;
+    /* Cores Nude */
+    --nude-claro: #f5e6d3;
+    --nude-medio: #e8d5c4;
+    --nude-escuro: #d4b896;
+    --nude-dourado: #c9a882;
+    --bege: #faf8f5;
+    --bege-escuro: #ebe7e0;
+    --marrom-claro: #b8a082;
+    --marrom-medio: #8b7355;
+    --marrom-escuro: #5c4a3a;
     --branco: #ffffff;
-    --cinza-claro: #e0e0e0;
-    --cinza: #888888;
-    --sombra-rosa: rgba(255, 20, 147, 0.3);
-    --sombra-roxo: rgba(147, 112, 219, 0.3);
+    --branco-creme: #fefefe;
+    --cinza-claro: #e8e5e0;
+    --cinza: #999999;
+    --cinza-escuro: #666666;
+    --preto-suave: #2c2c2c;
+    --sombra-nude: rgba(212, 184, 150, 0.2);
+    --sombra-suave: rgba(0, 0, 0, 0.08);
 }
 
 html {
@@ -25,8 +32,8 @@ html {
 
 body {
     font-family: 'Poppins', sans-serif;
-    background-color: var(--preto);
-    color: var(--branco);
+    background-color: var(--bege);
+    color: var(--preto-suave);
     line-height: 1.6;
     overflow-x: hidden;
 }
@@ -39,21 +46,21 @@ body {
 
 /* Header */
 .header {
-    background: linear-gradient(135deg, var(--preto) 0%, var(--preto-suave) 100%);
-    padding: 1rem 0;
+    background: var(--branco);
+    padding: 1.2rem 0;
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
     z-index: 1000;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
-    border-bottom: 2px solid var(--rosa-vibrante);
+    box-shadow: 0 2px 15px var(--sombra-suave);
+    border-bottom: 1px solid var(--cinza-claro);
     transition: all 0.3s ease;
 }
 
 .header.scrolled {
-    padding: 0.5rem 0;
-    box-shadow: 0 4px 30px var(--sombra-rosa);
+    padding: 0.8rem 0;
+    box-shadow: 0 2px 20px var(--sombra-suave);
 }
 
 .header .container {
@@ -66,6 +73,7 @@ body {
     display: flex;
     align-items: center;
     gap: 15px;
+    text-decoration: none;
 }
 
 .logo {
@@ -73,39 +81,37 @@ body {
     height: 50px;
     border-radius: 50%;
     object-fit: cover;
-    border: 2px solid var(--rosa-vibrante);
-    box-shadow: 0 0 15px var(--sombra-rosa);
+    border: 2px solid var(--nude-medio);
+    box-shadow: 0 2px 10px var(--sombra-suave);
     transition: transform 0.3s ease;
 }
 
 .logo:hover {
-    transform: scale(1.1) rotate(5deg);
+    transform: scale(1.05);
 }
 
 .brand-name {
     font-size: 1.5rem;
-    font-weight: 700;
-    background: linear-gradient(135deg, var(--rosa-vibrante), var(--rosa-neon), var(--roxo));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    text-shadow: 0 0 20px var(--sombra-rosa);
+    font-weight: 600;
+    color: var(--marrom-medio);
+    letter-spacing: -0.5px;
 }
 
 .nav-list {
     display: flex;
     list-style: none;
-    gap: 30px;
+    gap: 35px;
 }
 
 .nav-link {
-    color: var(--branco);
+    color: var(--preto-suave);
     text-decoration: none;
     font-weight: 500;
-    font-size: 1rem;
+    font-size: 0.95rem;
     position: relative;
     transition: color 0.3s ease;
     padding: 5px 0;
+    letter-spacing: 0.3px;
 }
 
 .nav-link::after {
@@ -115,16 +121,23 @@ body {
     left: 0;
     width: 0;
     height: 2px;
-    background: linear-gradient(90deg, var(--rosa-vibrante), var(--rosa-neon));
+    background: linear-gradient(90deg, var(--nude-dourado), var(--marrom-claro));
     transition: width 0.3s ease;
-    box-shadow: 0 0 10px var(--sombra-rosa);
 }
 
 .nav-link:hover {
-    color: var(--rosa-vibrante);
+    color: var(--marrom-medio);
 }
 
 .nav-link:hover::after {
+    width: 100%;
+}
+
+.nav-link.active {
+    color: var(--marrom-medio);
+}
+
+.nav-link.active::after {
     width: 100%;
 }
 
@@ -140,11 +153,10 @@ body {
 
 .menu-toggle span {
     width: 25px;
-    height: 3px;
-    background: var(--rosa-vibrante);
-    border-radius: 3px;
+    height: 2px;
+    background: var(--marrom-medio);
+    border-radius: 2px;
     transition: all 0.3s ease;
-    box-shadow: 0 0 5px var(--sombra-rosa);
 }
 
 .menu-toggle.active span:nth-child(1) {
@@ -161,12 +173,12 @@ body {
 
 /* Hero Section */
 .hero {
-    min-height: 100vh;
+    min-height: 90vh;
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
-    background: linear-gradient(135deg, var(--preto) 0%, var(--preto-suave) 50%, var(--preto) 100%);
+    background: linear-gradient(135deg, var(--bege) 0%, var(--branco-creme) 50%, var(--nude-claro) 100%);
     padding: 120px 20px 80px;
     overflow: hidden;
 }
@@ -178,19 +190,8 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background: radial-gradient(circle at 30% 50%, var(--sombra-rosa) 0%, transparent 50%),
-                radial-gradient(circle at 70% 80%, var(--sombra-roxo) 0%, transparent 50%);
-    opacity: 0.3;
-    animation: pulse 4s ease-in-out infinite;
-}
-
-@keyframes pulse {
-    0%, 100% {
-        opacity: 0.3;
-    }
-    50% {
-        opacity: 0.5;
-    }
+    background: radial-gradient(circle at 30% 50%, var(--sombra-nude) 0%, transparent 60%);
+    opacity: 0.4;
 }
 
 .hero-content {
@@ -212,37 +213,36 @@ body {
 }
 
 .hero-title {
-    font-size: 3.5rem;
-    font-weight: 700;
+    font-size: 3.2rem;
+    font-weight: 600;
     margin-bottom: 20px;
-    background: linear-gradient(135deg, var(--rosa-vibrante), var(--rosa-neon), var(--roxo), var(--branco));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    text-shadow: 0 0 30px var(--sombra-rosa);
+    color: var(--marrom-medio);
     line-height: 1.2;
+    letter-spacing: -1px;
 }
 
 .hero-subtitle {
-    font-size: 1.3rem;
-    color: var(--cinza-claro);
+    font-size: 1.2rem;
+    color: var(--cinza-escuro);
     margin-bottom: 40px;
     line-height: 1.8;
+    font-weight: 300;
 }
 
 .cta-button {
     display: inline-block;
     padding: 15px 40px;
-    background: linear-gradient(135deg, var(--rosa-vibrante), var(--rosa-neon));
+    background: linear-gradient(135deg, var(--nude-dourado), var(--marrom-claro));
     color: var(--branco);
     text-decoration: none;
-    font-weight: 600;
-    font-size: 1.1rem;
-    border-radius: 50px;
-    box-shadow: 0 5px 25px var(--sombra-rosa);
+    font-weight: 500;
+    font-size: 1rem;
+    border-radius: 30px;
+    box-shadow: 0 4px 15px var(--sombra-nude);
     transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
+    letter-spacing: 0.5px;
 }
 
 .cta-button::before {
@@ -253,7 +253,7 @@ body {
     width: 0;
     height: 0;
     border-radius: 50%;
-    background: rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.2);
     transform: translate(-50%, -50%);
     transition: width 0.6s, height 0.6s;
 }
@@ -264,46 +264,23 @@ body {
 }
 
 .cta-button:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 35px var(--sombra-rosa), 0 0 20px var(--rosa-neon);
-}
-
-.hero-decoration {
-    position: absolute;
-    width: 200px;
-    height: 200px;
-    border: 2px solid var(--rosa-vibrante);
-    border-radius: 50%;
-    top: 10%;
-    right: 10%;
-    opacity: 0.2;
-    animation: rotate 20s linear infinite;
-}
-
-@keyframes rotate {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px var(--sombra-nude);
 }
 
 /* Produtos Section */
 .produtos {
     padding: 100px 20px;
-    background: linear-gradient(180deg, var(--preto) 0%, var(--preto-suave) 100%);
+    background: var(--branco);
 }
 
 .section-title {
     font-size: 2.5rem;
-    font-weight: 700;
+    font-weight: 600;
     text-align: center;
     margin-bottom: 60px;
-    background: linear-gradient(135deg, var(--rosa-vibrante), var(--roxo));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: var(--marrom-medio);
+    letter-spacing: -0.5px;
 }
 
 .produtos-grid {
@@ -313,65 +290,33 @@ body {
     margin-top: 50px;
 }
 
+.produtos-cta {
+    text-align: center;
+    margin-top: 40px;
+}
+
 .produto-card {
-    background: linear-gradient(135deg, var(--preto-suave) 0%, #2a2a2a 100%);
-    border-radius: 20px;
+    background: var(--branco);
+    border-radius: 15px;
     overflow: hidden;
-    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 3px 15px var(--sombra-suave);
     transition: all 0.4s ease;
-    border: 2px solid transparent;
+    border: 1px solid var(--cinza-claro);
     position: relative;
 }
 
-.produto-card.fade-in {
-    animation: fadeInUp 0.6s ease-out forwards;
-}
-
-.produto-card:nth-child(1).fade-in {
-    animation-delay: 0.1s;
-}
-
-.produto-card:nth-child(2).fade-in {
-    animation-delay: 0.2s;
-}
-
-.produto-card:nth-child(3).fade-in {
-    animation-delay: 0.3s;
-}
-
-.produto-card:nth-child(4).fade-in {
-    animation-delay: 0.4s;
-}
-
-.produto-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(135deg, var(--rosa-vibrante), var(--roxo));
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    z-index: 0;
-}
-
 .produto-card:hover {
-    transform: translateY(-10px) scale(1.02);
-    box-shadow: 0 15px 40px var(--sombra-rosa), 0 0 30px var(--sombra-roxo);
-    border-color: var(--rosa-vibrante);
-}
-
-.produto-card:hover::before {
-    opacity: 0.1;
+    transform: translateY(-8px);
+    box-shadow: 0 8px 25px var(--sombra-nude);
+    border-color: var(--nude-medio);
 }
 
 .produto-image {
     width: 100%;
-    height: 250px;
+    height: 280px;
     overflow: hidden;
     position: relative;
-    z-index: 1;
+    background: var(--bege);
 }
 
 .produto-image img {
@@ -382,24 +327,22 @@ body {
 }
 
 .produto-card:hover .produto-image img {
-    transform: scale(1.1);
+    transform: scale(1.08);
 }
 
 .produto-info {
     padding: 25px;
-    position: relative;
-    z-index: 1;
 }
 
 .produto-name {
-    font-size: 1.4rem;
+    font-size: 1.3rem;
     font-weight: 600;
     margin-bottom: 10px;
-    color: var(--branco);
+    color: var(--marrom-medio);
 }
 
 .produto-description {
-    color: var(--cinza-claro);
+    color: var(--cinza-escuro);
     margin-bottom: 20px;
     font-size: 0.95rem;
     line-height: 1.6;
@@ -408,27 +351,32 @@ body {
 .btn-comprar {
     width: 100%;
     padding: 12px;
-    background: linear-gradient(135deg, var(--rosa-vibrante), var(--rosa-neon));
+    background: linear-gradient(135deg, var(--nude-dourado), var(--marrom-claro));
     color: var(--branco);
     border: none;
     border-radius: 25px;
-    font-weight: 600;
-    font-size: 1rem;
+    font-weight: 500;
+    font-size: 0.95rem;
     cursor: pointer;
     transition: all 0.3s ease;
-    box-shadow: 0 3px 15px var(--sombra-rosa);
+    box-shadow: 0 2px 10px var(--sombra-nude);
 }
 
 .btn-comprar:hover {
     transform: translateY(-2px);
-    box-shadow: 0 5px 25px var(--sombra-rosa), 0 0 15px var(--rosa-neon);
-    background: linear-gradient(135deg, var(--rosa-neon), var(--roxo));
+    box-shadow: 0 4px 15px var(--sombra-nude);
+}
+
+.btn-link {
+    display: block;
+    text-align: center;
+    text-decoration: none;
 }
 
 /* Sobre Section */
 .sobre {
     padding: 100px 20px;
-    background: linear-gradient(180deg, var(--preto-suave) 0%, var(--preto) 100%);
+    background: linear-gradient(180deg, var(--bege) 0%, var(--branco) 100%);
 }
 
 .sobre-content {
@@ -459,10 +407,11 @@ body {
 }
 
 .sobre-text p {
-    font-size: 1.1rem;
-    color: var(--cinza-claro);
+    font-size: 1.05rem;
+    color: var(--cinza-escuro);
     margin-bottom: 20px;
     line-height: 1.8;
+    font-weight: 300;
 }
 
 .sobre-image {
@@ -482,20 +431,21 @@ body {
 
 .sobre-image img {
     width: 100%;
-    border-radius: 20px;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5), 0 0 30px var(--sombra-rosa);
+    border-radius: 15px;
+    box-shadow: 0 8px 25px var(--sombra-suave);
     transition: transform 0.3s ease;
 }
 
 .sobre-image:hover img {
-    transform: scale(1.05);
+    transform: scale(1.02);
 }
 
 /* Footer */
 .footer {
-    background: linear-gradient(135deg, var(--preto) 0%, var(--preto-suave) 100%);
+    background: var(--preto-suave);
     padding: 60px 20px 30px;
-    border-top: 2px solid var(--rosa-vibrante);
+    border-top: 1px solid var(--bege-escuro);
+    color: var(--cinza-claro);
 }
 
 .footer-content {
@@ -506,17 +456,16 @@ body {
 }
 
 .footer-section h3 {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     margin-bottom: 20px;
-    background: linear-gradient(135deg, var(--rosa-vibrante), var(--roxo));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: var(--nude-claro);
+    font-weight: 600;
 }
 
 .footer-section p {
     color: var(--cinza-claro);
     line-height: 1.8;
+    font-weight: 300;
 }
 
 .social-links {
@@ -533,32 +482,211 @@ body {
     text-decoration: none;
     transition: all 0.3s ease;
     padding: 10px;
-    border-radius: 10px;
+    border-radius: 8px;
+    font-weight: 300;
 }
 
 .social-link i {
-    font-size: 1.5rem;
-    color: var(--rosa-vibrante);
+    font-size: 1.3rem;
+    color: var(--nude-claro);
     transition: all 0.3s ease;
 }
 
 .social-link:hover {
-    color: var(--rosa-vibrante);
-    background: rgba(255, 20, 147, 0.1);
+    color: var(--nude-claro);
+    background: rgba(245, 230, 211, 0.1);
     transform: translateX(5px);
 }
 
 .social-link:hover i {
-    transform: scale(1.2);
-    text-shadow: 0 0 10px var(--sombra-rosa);
+    transform: scale(1.1);
 }
 
 .footer-bottom {
     text-align: center;
     padding-top: 30px;
-    border-top: 1px solid rgba(255, 20, 147, 0.2);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
     color: var(--cinza);
     font-size: 0.9rem;
+    font-weight: 300;
+}
+
+/* Página de Produtos */
+.produtos-page {
+    padding: 120px 20px 100px;
+    background: var(--bege);
+    min-height: 100vh;
+}
+
+.produtos-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.produtos-header h1 {
+    font-size: 3rem;
+    font-weight: 600;
+    color: var(--marrom-medio);
+    margin-bottom: 15px;
+    letter-spacing: -1px;
+}
+
+.produtos-header p {
+    font-size: 1.1rem;
+    color: var(--cinza-escuro);
+    font-weight: 300;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Página Sobre */
+.sobre-page {
+    padding: 120px 20px 100px;
+    background: var(--branco);
+    min-height: 100vh;
+}
+
+.sobre-page-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.sobre-page-header h1 {
+    font-size: 3rem;
+    font-weight: 600;
+    color: var(--marrom-medio);
+    margin-bottom: 15px;
+    letter-spacing: -1px;
+}
+
+.sobre-page-content {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.sobre-page-content p {
+    font-size: 1.1rem;
+    color: var(--cinza-escuro);
+    margin-bottom: 25px;
+    line-height: 1.9;
+    font-weight: 300;
+}
+
+.sobre-image-wrapper {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.sobre-image-page {
+    width: 100%;
+    max-width: 600px;
+    border-radius: 15px;
+    margin-bottom: 30px;
+    box-shadow: 0 8px 25px var(--sombra-suave);
+    transition: transform 0.3s ease;
+}
+
+.sobre-image-page:hover {
+    transform: scale(1.02);
+}
+
+/* Página Contato */
+.contato-page {
+    padding: 120px 20px 100px;
+    background: linear-gradient(135deg, var(--bege) 0%, var(--branco) 100%);
+    min-height: 100vh;
+}
+
+.contato-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.contato-header h1 {
+    font-size: 3rem;
+    font-weight: 600;
+    color: var(--marrom-medio);
+    margin-bottom: 15px;
+    letter-spacing: -1px;
+}
+
+.contato-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.contato-card {
+    background: var(--branco);
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 3px 15px var(--sombra-suave);
+    text-align: center;
+    transition: all 0.3s ease;
+    border: 1px solid var(--cinza-claro);
+}
+
+.contato-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px var(--sombra-nude);
+}
+
+.contato-card i {
+    font-size: 2.5rem;
+    color: var(--nude-dourado);
+    margin-bottom: 20px;
+}
+
+.contato-card h3 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--marrom-medio);
+    margin-bottom: 15px;
+}
+
+.contato-card p {
+    color: var(--cinza-escuro);
+    font-weight: 300;
+    line-height: 1.8;
+}
+
+.contato-card a {
+    color: var(--marrom-claro);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.contato-card a:hover {
+    color: var(--marrom-medio);
+    text-decoration: underline;
+}
+
+.horario-card {
+    text-align: center;
+    margin-top: 60px;
+    padding: 40px;
+    background: var(--branco);
+    border-radius: 15px;
+    box-shadow: 0 3px 15px var(--sombra-suave);
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.horario-card h2 {
+    font-size: 1.8rem;
+    color: var(--marrom-medio);
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.horario-card p {
+    color: var(--cinza-escuro);
+    font-size: 1.1rem;
+    line-height: 1.8;
+    font-weight: 300;
 }
 
 /* Responsividade */
@@ -572,10 +700,10 @@ body {
         top: 70px;
         left: -100%;
         width: 100%;
-        background: linear-gradient(135deg, var(--preto) 0%, var(--preto-suave) 100%);
+        background: var(--branco);
         transition: left 0.3s ease;
-        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
-        border-top: 2px solid var(--rosa-vibrante);
+        box-shadow: 0 5px 20px var(--sombra-suave);
+        border-top: 1px solid var(--cinza-claro);
     }
 
     .nav.active {
@@ -591,7 +719,7 @@ body {
     .nav-link {
         padding: 15px;
         display: block;
-        border-bottom: 1px solid rgba(255, 20, 147, 0.2);
+        border-bottom: 1px solid var(--cinza-claro);
     }
 
     .hero-title {
@@ -622,6 +750,16 @@ body {
     .footer-content {
         grid-template-columns: 1fr;
     }
+
+    .contato-content {
+        grid-template-columns: 1fr;
+    }
+
+    .produtos-header h1,
+    .sobre-page-header h1,
+    .contato-header h1 {
+        font-size: 2.2rem;
+    }
 }
 
 @media (max-width: 480px) {
@@ -644,7 +782,12 @@ body {
 
     .cta-button {
         padding: 12px 30px;
-        font-size: 1rem;
+        font-size: 0.95rem;
+    }
+
+    .produtos-header h1,
+    .sobre-page-header h1,
+    .contato-header h1 {
+        font-size: 1.8rem;
     }
 }
-
